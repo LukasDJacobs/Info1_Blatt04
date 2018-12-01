@@ -1,0 +1,56 @@
+\documentclass[a4paper,11pt]{scrartcl}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{titlesec}
+\usepackage[linktocpage=true]{hyperref}
+\usepackage{float} %To tell tables not to float
+\usepackage{graphicx}
+\usepackage{listings} %Code listings
+\usepackage{csquotes} %Zitate
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+%Setup für Umlaute in Code
+\lstset{
+	extendedchars=true,
+	literate={Ö}{{\"O}}1 {Ä}{{\"A}}1 {Ü}{{\"U}}1 {ß}{{\ss}}1 {ü}{{\"u}}1 {ä}{{\"a}}1 {ö}{{\"o}}1
+}
+
+\title{Übungsblatt 04}
+\subtitle{Informatik I - WS 2018/2019}
+\author{Lukas Jacobs (397793) \and Thore Braun (503314) \and Harald Heske (502193) \and Nils Busch (285076)}
+\date{07.12.2018}
+
+\renewcommand{\thesection}{}
+\titleformat
+	{\section} %command
+	[hang] %shape
+	{\bfseries\Large\bfseries} %format
+	{} %label
+	{0.5ex} %sep
+	{} %before
+	[] %after
+
+\titleformat
+	{\subsection} %command
+	[hang] %shape
+	{} %format
+	{} %label
+	{0.5ex} %sep
+	{} %before
+	[] %after
+	
+\setcounter{secnumdepth}{0}
+	
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\addtocontents{toc}{~\hfill\textbf{Seite}\par}
+	\newpage
+	
+	\include{aufgabe_01}
+	\include{aufgabe_02}
+	\include{aufgabe_03}
+	\include{aufgabe_04}
+\end{document}
