@@ -28,6 +28,12 @@ printfn "Summe von 1 bis 10: %i" sum1
 let sum2 = List.average [1.0 .. 10.0]
 printfn "Durchschnitt von 1 bis 10: %f" sum2
 
+//rekursiver Funktionsaufruf bei der eine Liste von Floats uebergeben werden
+let rec recsum (li:list<float>) = 
+    //rekursionsaufloesung: gibt es keine Elemente in der Liste wird die Addition mit der 0 als erstem Summanden gestartet.
+    if List.isEmpty li then 0.0
+    //die köpfe werden addiert mit der rueckgabe der funktion. Die liste wird durch tail immer um 1 element kleiner
+    else li.Head + recsum(li.Tail)
 
-//let rec berechneSumme values accum =
-//  if x < 1 then 1
+let a = recsum [1.0..10.0]
+printfn "a=%f" a
