@@ -25,3 +25,13 @@ Erstellen Sie ein F\# Programm, welches...
 \paragraph*{Hinweis:}Achten Sie darauf Ihren Code zu kommentieren!
 
 \subsection{d) Beschreiben Sie Ihr Vorgehen, um den Durchschnitt einer Liste mit Integer Variablen zu berechnen. Warum müssen Sie sich diese Gedanken machen, wenn es doch die Funktion \textit{Average} bereits gibt?} 
+\paragraph*{}Das sich hieraus ergebende Problem wird schnell deutlich, versucht man folgenden Code zu kompilieren:
+\begin{lstlisting}
+	let av = List.average [1 .. 10]
+\end{lstlisting}
+Der Compiler quittiert dies mit einer Fehlermeldung: 
+\begin{lstlisting}
+	error FS0001:	The type 'int' does not support the
+	operator 'DivideByInt'
+\end{lstlisting}
+Bei den Elementen der Liste $[1 .. 10]$ handelt es sich um Integer, also ganzzahlige Werte ohne Komma (bzw. Festkommazahlen mit genau 0 Stellen hinter dem Komma). Versucht man hier eine Division besteht das Risiko, dass das Ergebnis nicht ganzzahlig ist. Eine Methode mit diesem Problem umzugehen, ist es die Werte in Fließkommazahlen zu konvertieren (zu \glqq casten\grqq). Aus diesen lässt sich Problemlos ein Durchschnittswert berechnen, entweder mittels selbst zu schreibender Logik oder mittels List.average
